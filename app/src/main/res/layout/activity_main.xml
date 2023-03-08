@@ -24,25 +24,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
         android:layout_marginBottom="128dp"
         android:backgroundTint="#309F9F"
         android:text="La maccina"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/SecondOption"
         app:layout_constraintHorizontal_bias="0.014"
-        app:layout_constraintStart_toStartOf="@+id/Spiaggia" />
+        app:layout_constraintStart_toStartOf="@+id/Spiaggia"
+        app:layout_constraintTop_toBottomOf="@+id/Spiaggia" />
 
     <Button
         android:id="@+id/SecondOption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:layout_marginBottom="128dp"
         android:backgroundTint="#8F1747"
         android:text="il burro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Spiaggia"
         app:layout_constraintHorizontal_bias="0.861"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Spiaggia" />
 
     <Button
         android:id="@+id/ThirdOption"
@@ -51,8 +55,12 @@
         android:layout_marginTop="32dp"
         android:backgroundTint="#304DDF"
         android:text="La spiaggia"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/FirstOption"
-        app:layout_constraintTop_toBottomOf="@+id/FirstOption" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/FirstOption"
+        app:layout_constraintTop_toBottomOf="@+id/FirstOption"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/ForthOption"
@@ -61,10 +69,12 @@
         android:layout_marginTop="32dp"
         android:backgroundTint="#6C2D2D"
         android:text="La testa"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/SecondOption"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/ThirdOption"
-        app:layout_constraintTop_toBottomOf="@+id/SecondOption" />
+        app:layout_constraintStart_toStartOf="@+id/SecondOption"
+        app:layout_constraintTop_toBottomOf="@+id/SecondOption"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/Spiaggia"
@@ -84,12 +94,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:shadowColor="#FFFFFF"
-        android:text="Guess Word"
+        android:text="Choose Correct Answer"
         android:textColorHint="#985959"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/Spiaggia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/NextQuestionId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:onClick="onClickGoToSecondActivity"
+        android:text="Next"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Spiaggia" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

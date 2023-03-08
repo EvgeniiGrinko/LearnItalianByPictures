@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Learn Italian by Pictures</string>
+    <string name="guess_answer">Choose Correct Option</string>
+    <string name="correct_answer">Your answer is correct!</string>
+    <string name="incorrect_answer">Your answer is not correct :(</string>
+    <string name="next">Next</string>
+    <string name="la_citta">La Citta</string>
+    <string name="la_persona">La Persona</string>
+    <string name="uomo">Uomo</string>
+    <string name="bicicletta">Bicicletta</string>
+    <string name="la_macchina">La macchina</string>
+    <string name="il_burro">Il Burro</string>
+    <string name="la_spiaggia">La Spiaggia</string>
+    <string name="la_testa">La Testa</string>
 </resources>
