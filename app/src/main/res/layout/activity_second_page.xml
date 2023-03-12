@@ -4,7 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#80E682"
+    android:backgroundTint="#75E6F4"
     tools:context=".SecondPageActivity">
+
+    <Button
+        android:id="@+id/buttonToReadSenteces2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#292626"
+        android:onClick="onClickReadSentences"
+        android:text="Read Example Sentences"
+        android:textColor="#53DA88"
+        android:textColorHighlight="#9A3131"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.414" />
 
     <ImageView
         android:id="@+id/imageView"

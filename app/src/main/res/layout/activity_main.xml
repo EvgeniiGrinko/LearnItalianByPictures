@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#99EA88"
+    android:backgroundTint="#ACEDE2"
+    android:outlineAmbientShadowColor="#3E2828"
+    android:outlineSpotShadowColor="#170D0D"
     tools:context=".MainActivity">
 
     <TextView
@@ -93,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:shadowColor="#FFFFFF"
+        android:shadowColor="#221717"
         android:text="Choose Correct Answer"
         android:textColorHint="#985959"
         android:textSize="34sp"
@@ -114,5 +118,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Spiaggia" />
+
+    <Button
+        android:id="@+id/buttonToReadSenteces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#292626"
+        android:onClick="onClickReadSentences"
+        android:outlineAmbientShadowColor="#AC3636"
+        android:text="Read Example Sentences"
+        android:textColor="#53DA88"
+        android:textColorHighlight="#9A3131"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Spiaggia"
+        app:layout_constraintStart_toStartOf="@+id/Spiaggia"
+        app:layout_constraintTop_toBottomOf="@+id/Spiaggia"
+        app:layout_constraintVertical_bias="0.414" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
