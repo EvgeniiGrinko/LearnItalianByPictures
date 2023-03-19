@@ -12,4 +12,10 @@
     <string name="il_burro">Il Burro</string>
     <string name="la_spiaggia">La Spiaggia</string>
     <string name="la_testa">La Testa</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="done">Pronto</string>
+    <string name="avatar">Avatar</string>
 </resources>

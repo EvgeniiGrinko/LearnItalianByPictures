@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInSignUpActivity">
+
+    <ImageView
+        android:id="@+id/avatarImage"
+        android:layout_width="247dp"
+        android:layout_height="197dp"
+        android:layout_marginTop="80dp"
+        android:contentDescription="David head"
+        android:onClick="onClickAvatarButton"
+        android:textAlignment="center"
+        android:textDirection="inherit"
+        android:tooltipText="head_david"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/david_head" />
+
+    <EditText
+        android:id="@+id/editTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/showAvatarImageButton"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/showAvatarImageButton"
+        app:layout_constraintTop_toBottomOf="@+id/showAvatarImageButton" />
+
+    <EditText
+        android:id="@+id/editTextPersonSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Surname"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonName" />
+
+    <EditText
+        android:id="@+id/editTextPersonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Login"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonAge"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextPersonAge"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge" />
+
+    <EditText
+        android:id="@+id/editTextPersonPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Password"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonLogin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextPersonLogin"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonLogin" />
+
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="onClickBack"
+        android:text="pronto"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextPersonPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonPassword"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <Button
+        android:id="@+id/showAvatarImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#C67878"
+        android:text="avatar"
+        android:textColor="#201C1C"
+        app:layout_constraintEnd_toEndOf="@+id/avatarImage"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/avatarImage"
+        app:layout_constraintTop_toBottomOf="@+id/avatarImage" />
+
+    <EditText
+        android:id="@+id/editTextPersonAge"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Age"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonSurname"
+        app:layout_constraintStart_toStartOf="@+id/editTextPersonSurname"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonSurname" />
+</androidx.constraintlayout.widget.ConstraintLayout>
