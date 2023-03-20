@@ -29,8 +29,8 @@
         android:layout_marginTop="20dp"
         android:height="50dp"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/showAvatarImageButton"
         app:layout_constraintHorizontal_bias="0.516"
@@ -44,8 +44,8 @@
         android:layout_marginTop="10dp"
         android:height="50dp"
         android:ems="10"
+        android:hint="Surname"
         android:inputType="textPersonName"
-        android:text="Surname"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
         app:layout_constraintHorizontal_bias="0.0"
@@ -59,13 +59,13 @@
         android:layout_marginTop="10dp"
         android:height="50dp"
         android:ems="10"
+        android:hint="Login"
         android:inputType="textPersonName"
-        android:text="Login"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPersonAge"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonSurname"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextPersonAge"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge" />
+        app:layout_constraintStart_toStartOf="@+id/editTextPersonSurname"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonSurname" />
 
     <EditText
         android:id="@+id/editTextPersonPassword"
@@ -74,8 +74,8 @@
         android:layout_marginTop="10dp"
         android:height="50dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPersonName"
-        android:text="Password"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/editTextPersonLogin"
         app:layout_constraintHorizontal_bias="0.0"
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextPersonLogin" />
 
     <Button
-        android:id="@+id/doneButton"
+        android:id="@+id/doneLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -109,17 +109,4 @@
         app:layout_constraintStart_toStartOf="@+id/avatarImage"
         app:layout_constraintTop_toBottomOf="@+id/avatarImage" />
 
-    <EditText
-        android:id="@+id/editTextPersonAge"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:height="50dp"
-        android:ems="10"
-        android:inputType="number"
-        android:text="Age"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPersonSurname"
-        app:layout_constraintStart_toStartOf="@+id/editTextPersonSurname"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonSurname" />
 </androidx.constraintlayout.widget.ConstraintLayout>
