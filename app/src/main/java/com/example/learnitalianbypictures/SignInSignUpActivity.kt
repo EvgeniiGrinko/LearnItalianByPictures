@@ -1,12 +1,16 @@
 package com.example.learnitalianbypictures
 
-import android.R.string
+import android.content.Context
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.example.learnitalianbypictures.databinding.ActivitySignInSignUpBinding
+import java.nio.charset.Charset
 
 
 class SignInSignUpActivity : AppCompatActivity() {
@@ -35,6 +39,46 @@ class SignInSignUpActivity : AppCompatActivity() {
         bindingClass.avatarImage.visibility = View.VISIBLE
 
     }
+    fun loginUser(context: Context, login: String, password: String) {
+        val url: String = "https://b058-82-215-122-139.eu.ngrok.io/api/user/login/"
+        val queue = Volley.newRequestQueue(context)
+        val requestBody = "login=$login&password=$password"
+
+        val postRequest: StringRequest = object : StringRequest(
+            Method.POST, url,
+            { response -> // response
+                Log.d("Response", response)
+            },
+            { error ->
+                Log.d("Error.Response", error.toString())
+            }
+        ) {
+            override fun getBody(): ByteArray {
+                return requestBody.toByteArray(Charset.defaultCharset())
+            }
+        }
+        queue.add(postRequest)
+    }
+    fun registerUser(context: Context, login: String, password: String, name: String, surname: String) {
+        val url: String = "https://b058-82-215-122-139.eu.ngrok.io/api/user/register/"
+        val queue = Volley.newRequestQueue(context)
+        val requestBody = "login=$login&password=$password&name=$name&surname=$surname"
+
+        val postRequest: StringRequest = object : StringRequest(
+            Method.POST, url,
+            { response -> // response
+                Log.d("Response", response)
+            },
+            { error ->
+                Log.d("Error.Response", error.toString())
+            }
+        ) {
+            override fun getBody(): ByteArray {
+                return requestBody.toByteArray(Charset.defaultCharset())
+            }
+        }
+        queue.add(postRequest)
+    }
 
 
 
@@ -54,8 +98,9 @@ class SignInSignUpActivity : AppCompatActivity() {
             } else if(TextUtils.isEmpty(text2)){
                 bindingClass.editTextPersonPassword.error = "Please Enter a Password!"
             } else {
+                var result = loginUser(this,text, text2)
                 intent.putExtra(
-                    "sign_in", arrayOf( text, text2)
+                    "sign_in", arrayOf( text, text2, result.toString())
                 )
                 setResult(111, intent)
                 finish()
@@ -71,9 +116,9 @@ class SignInSignUpActivity : AppCompatActivity() {
             } else if(TextUtils.isEmpty(text2)){
                 bindingClass.editTextPersonPassword.error = "Please Enter a Password!"
             } else {
+                var result = registerUser(this,text, text2, text3,text4)
                 intent.putExtra(
-                    "sign_up", arrayOf( text3, text4, text, text2)
-
+                    "sign_up", arrayOf( text3, text4, text, text2, result.toString())
                 )
                 setResult(222, intent)
                 finish()
