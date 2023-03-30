@@ -69,7 +69,7 @@ class SignInSignUpActivity : AppCompatActivity() {
                 Log.d("Success logging a user", "User  $a")
 
             } else {
-                val b = it?.id
+                val b = it
                 Log.d("Error logging a user", "User  $b")
             }
         }
@@ -129,6 +129,8 @@ class SignInSignUpActivity : AppCompatActivity() {
                 intent.putExtra(
                     "sign_in", arrayOf(login, password, result.toString())
                 )
+                setResult(111, intent)
+                finish()
 
             }
         } else if (code == 222) {
@@ -141,10 +143,12 @@ class SignInSignUpActivity : AppCompatActivity() {
             } else if (TextUtils.isEmpty(password)) {
                 bindingClass.editTextPersonPassword.error = "Please Enter a Password!"
             } else {
-                var registeredUser = UserRegisterInfo(null, login, password, name, surname)
+                var registeredUser = registerUser(login, password, name, surname)
                 intent.putExtra(
-                    "sign_up", arrayOf(name, surname, login, password, registeredUser)
+                    "sign_up", arrayOf(name, surname, login, password, registeredUser.toString())
                 )
+                setResult(222, intent)
+                finish()
 
             }
 
@@ -174,9 +178,11 @@ interface RestApi {
     @POST("login")
     fun addUser(@Body userData: UserLoginInfo): Call<UserLoginInfo>
 
+}
+interface RestApi2 {
     @Headers("Content-Type: application/json")
     @POST("register")
-    fun registerUser(@Body userData: UserRegisterInfo): Call<UserRegisterInfo>
+    fun regUser(@Body userData: UserRegisterInfo): Call<UserRegisterInfo>
 }
 
 
@@ -224,10 +230,15 @@ class RestApiService {
     }
 
     fun registerUser(userData: UserRegisterInfo, onResult: (UserRegisterInfo?) -> Unit) {
-        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
-        retrofit.registerUser(userData).enqueue(
+        val retrofit2 = ServiceBuilder.buildService(RestApi2::class.java)
+        retrofit2.regUser(userData).enqueue(
             object : Callback<UserRegisterInfo> {
                 override fun onFailure(call: Call<UserRegisterInfo>, t: Throwable) {
+                    val message = t.message
+                    val cause = t.cause
+                    val tStackTraceString = t.stackTraceToString()
+                    Log.d("Fucked up user register", "User id - fucked up with message $message caused by $cause and stack trace $tStackTraceString")
+
                     onResult(null)
                 }
 
